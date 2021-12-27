@@ -28,32 +28,33 @@
         <div class="navbtn"></div>
         <nav class="nav hidden">
             <ul class="nav__ul">
-                <li><a href="#selection">Máme na čepu</a></li>
-                <li><a href="#aboutus">O nás</a></li>
-                <li><a href="#gallery">Galerie</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+                <li><a class="nav__ul__a" href="#selection">Máme na čepu</a></li>
+                <li><a class="nav__ul__a" href="#aboutus">O nás</a></li>
+                <li class="nav__ul__li--hiden"></li>
+                <li><a class="nav__ul__a" href="#gallery">Galerie</a></li>
+                <li><a class="nav__ul__a" href="#contact">Kontakt</a></li>
             </ul>
         </nav>
         <div class="selection" id="selection">
             <h2 class="hidden">Máme na čepu</h2>
-            <div class="selection__beer">
-                <img class="selection__beer__photo" src="./img/finalrender12.jpg" alt="">
-                <div class="selection__beer__text">
+            <div  class="selection__beer">
+                <img onclick="select(0)" class="selection__beer__photo" src="./img/finalrender12.jpg" alt="">
+                <div class="selection__beer__text selection__beer__text--selected">
                     <h3 class="h3">Silná dvanáctka :</h3>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur sagittis hendrerit ante. Suspendisse nisl. Praesent dapibus. Curabitur bibendum justo non orci. Proin mattis la</p>
                 </div>
                 
             </div>
-            <div class="selection__beer hidden">
-                <img class="selection__beer__photo" src="./img/finalrender11.jpg" alt="">
+            <div class="selection__beer selection__beer--hidden">
+                <img onclick="select(1)" class="selection__beer__photo" src="./img/finalrender11.jpg" alt="">
                 <div class="selection__beer__text">
                     <h3 class="h3">Vypilovaná jedenáctka :</h3>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur sagittis hendrerit ante. Suspendisse nisl. Praesent dapibus. Curabitur bibendum justo non orci. Proin mattis la</p>
                 </div>
                 
             </div>
-            <div class="selection__beer hidden">
-                <img class="selection__beer__photo" src="./img/finalrendernealko.jpg" alt="">
+            <div class="selection__beer selection__beer--hidden">
+                <img onclick="select(2)" class="selection__beer__photo" src="./img/finalrendernealko.jpg" alt="">
                 <div class="selection__beer__text">
                     <h3 class="h3">nealko :</h3>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur sagittis hendrerit ante. Suspendisse nisl. Praesent dapibus. Curabitur bibendum justo non orci. Proin mattis la</p>
@@ -64,11 +65,23 @@
             <div onclick="next(1)" class="selection__btn" id="btnRight"></div>
         </div>
 
-        <div>
-            <h2>O nás</h2>
+        <div class="aboutus" id="aboutus">
+            <h2 class="h2">O nás</h2>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur sagittis hendrerit ante. Suspendisse nisl. Praesent dapibus. Curabitur bibendum justo non orci. Proin mattis la</p>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Curabitur sagittis hendrerit ante. Suspendisse nisl. Praesent dapibus. Curabitur bibendum justo non orci. Proin mattis la</p>
         </div>
+        <div class="gallery" id="gallery">
+            <h2 class="h2">Galerie</h2>
+            
+        </div>
+        <div class="contact" id="contact">
+            <h2 class="h2">Kontakt</h2>
+            <address>
+                <a class="contact__p"  href="tel:777777777">Tel: 777 777 777</a>
+                <a class="contact__p"  href="mailto:pivo@pivocep.cz">mail: pivo@pivocep.cz</a>
+                <p class="contact__p" >adresa: Ulice 2415/21 město 466 03 </p>
+            </address>
+          </div>
     </main>
 </body>
 </html>

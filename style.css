@@ -6,6 +6,13 @@ html{
     background-color: #171717;
     color: #D3D3D3;
     font-size: 12pt;
+    font-weight: 400;
+}
+.h2{
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(226, 185, 44);
 }
 
 .hidden{
@@ -13,7 +20,7 @@ html{
 }
 header{
     position: absolute;
-    width: 100vw;
+    width: calc(100vw - 8px);
 }
 .header__content{
     display: block;
@@ -79,8 +86,16 @@ a{
     text-align: center;
     text-decoration: none;
 }
-.nav__ul a{
+.nav__ul__li--hiden{
+    display: none;
+   
+}
+.nav__ul__a{
    padding-top: 10px;
+   font-size: 23px;
+   text-transform: uppercase;
+   font-weight: 500;
+   color: rgb(226, 185, 44);
 }
 .navbtn{
     position:fixed;
@@ -117,7 +132,9 @@ a{
 .selection .selection__btn--absolute{
     position: absolute;
 }
-
+.selection__beer--hidden{
+display: none;
+}
 .selection{
     margin: 0 20px;
 }
@@ -132,8 +149,20 @@ a{
 
 }
 
-
-@media (min-width:350px) {
+.selection__beer__text{
+    text-align: justify;
+}
+.aboutus{
+    max-width: 500px;
+    text-align: justify;
+}
+.contact__p{
+    display: block;
+    text-decoration: none;
+    margin: 10px 0;
+    color: rgb(226, 185, 44);
+}
+@media (min-width:340px) {
     .selection{
         margin: 0 30px;
     }
@@ -142,9 +171,103 @@ a{
   }
 }
 
+@media (min-width: 400px) {
+    .main{
+        margin:0 25px
+    }
+    .selection{
+        margin: 0 20px;
+    }
+ 
+}
 
+@media (min-width: 1025px) {
+    .main{
+        margin:0 60px;
+       
+    }
+    .selection__beer .selection__beer__text--selected{
+        visibility: visible;
+       width: 350px;
+       
+       transition: all .5s linear;
+       }
+ .selection__btn{
+     display: none;
+ }
+ .selection__beer--hidden{
+     display: block;
+ }
+ .selection{
+     display: flex;
+     margin: 0;
+     justify-content: space-around;
+ }
+ .nav__ul li{
+    width: auto;
 
-
+}
+ .selection__beer{
+     display: flex;
+    
+ }
+ .selection__beer__photo{
+    display: block;
+    padding-top: 30vh;
+    height: 68vh;
+    padding-bottom: 0;
+    padding-top: calc(var(--vh, 1vh) * 30);
+    padding-bottom:calc(var(--vh, 1vh) * 2) ;
+    height:  calc(var(--vh, 1vh) * 68);
+    margin: 0 auto;
+}
+.selection__beer__text{
+    overflow: hidden;
+    visibility: hidden;
+    width: 0px;
+   height: 150px;
+    margin-top: 60vh;
+    margin-top:  calc(var(--vh, 1vh) * 60);
+    transition: all .5s linear;
+    
+}
+.nav{
+    left: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+}
+.nav__ul{
+    flex-direction: row;
+    background-color: none;
+    justify-content: space-between;
+    margin:30px 60px;
+   
+}
+.navbtn{
+     display: none;
+ }
+ .nav__ul__li--hiden{
+    display: block;
+}
+}
+@media (min-width: 1600px) {
+    .main{
+        margin:0 auto;
+        max-width: calc(1600px - 60px);
+    }
+    .nav__ul{
+        margin:30px auto;
+        max-width: calc(1600px - 60px);
+    }
+ }
+ @media (min-width: 2000px) {
+    .header__content{
+ 
+        margin-top: 70px;
+       
+    }
+ }
 
 ::-webkit-scrollbar {
     width: 8px;

@@ -2,6 +2,7 @@ var vh = window.innerHeight * 0.01;
 var btns = document.getElementsByClassName("selection__btn");
 var selection = document.getElementById("selection");
 var beers = document.getElementsByClassName("selection__beer");
+var beerTexts =document.getElementsByClassName("selection__beer__text")
 var currentBeer = 0 ;
 var pos = 60*vh;      
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -17,7 +18,7 @@ document.onscroll = () => changeBtnPosition();
 function changeBtnPosition()
 {
    
-        if(window.innerWidth >= 350){
+        if(window.innerWidth >= 340){
             
             if ((selection.offsetHeight - 150 - pos) < window.pageYOffset) {
                
@@ -58,10 +59,21 @@ console.log(currentBeer)
 for (let i = 0; i < beers.length; i++) {
     const element = beers[i];
     if(i==currentBeer){
-        element.classList.remove("hidden");
+        element.classList.remove("selection__beer--hidden");
     }
     else{
-        element.classList.add("hidden");
+        element.classList.add("selection__beer--hidden");
     }
 }
+}
+function select(beer){
+    for (let i = 0; i < beerTexts.length; i++) {
+        const element = beerTexts[i];
+        if(i==beer){
+            element.classList.add("selection__beer__text--selected");
+        }
+        else{
+            element.classList.remove("selection__beer__text--selected");
+        }
+    }
 }
