@@ -13,6 +13,8 @@ html{
     text-transform: uppercase;
     font-weight: 600;
     color: rgb(226, 185, 44);
+    margin-top: 35px;
+    margin-bottom: 15px;
 }
 
 .hidden{
@@ -21,6 +23,7 @@ html{
 header{
     position: absolute;
     width: calc(100vw - 8px);
+
 }
 .header__content{
     display: block;
@@ -67,7 +70,8 @@ a{
     position: fixed;
     background-color: rgba(0, 0, 0, 0.774);
    backdrop-filter: blur(3px);
-    width: 100vw;
+   width: calc(100vw - 7px);
+    left: 0;
     top: 0;
 }
 .nav__ul{
@@ -96,6 +100,12 @@ a{
    text-transform: uppercase;
    font-weight: 500;
    color: rgb(226, 185, 44);
+}
+.navbtn span{
+    font-size: 35px;
+position: relative;
+top: 15px ;
+left: 12px;
 }
 .navbtn{
     position:fixed;
@@ -156,12 +166,58 @@ display: none;
     max-width: 500px;
     text-align: justify;
 }
+.gallery__content{
+    display: grid;
+
+    gap: 8px;
+    width: 100%;
+    max-width: 600px;
+}
+.gallery__fig{
+margin: 0px;
+
+
+}
+.gallery__fig__img{
+    display: block;
+    width: 100%;
+    object-fit: cover ;
+}
 .contact__p{
     display: block;
     text-decoration: none;
     margin: 10px 0;
     color: rgb(226, 185, 44);
 }
+.contact__social__link{
+    display: block;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: rgb(226, 185, 44);
+    
+}
+.contact__social__link:hover{
+    background-color:#696969;
+
+	color: rgb(226, 185, 44);
+}
+.contact__social__link span{
+font-size: 35px;
+position: relative;
+top: 15px ;
+left: 15px;
+
+    
+}
+.contact__social{
+display: flex;
+justify-content: space-between;
+margin:15px 0;
+}
+
+
+
 @media (min-width:340px) {
     .selection{
         margin: 0 30px;
@@ -178,6 +234,18 @@ display: none;
     .selection{
         margin: 0 20px;
     }
+    .gallery__content{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact__social{
+       
+        justify-content: start;
+       
+    }
+    .contact__social__link{
+        margin-right: 15px;
+    }
  
 }
 
@@ -189,8 +257,8 @@ display: none;
     .selection__beer .selection__beer__text--selected{
         visibility: visible;
        width: 350px;
-       
-       transition: all .5s linear;
+       color: #D3D3D3;
+       animation: beerTextReveal .7s linear;
        }
  .selection__btn{
      display: none;
@@ -224,17 +292,19 @@ display: none;
 .selection__beer__text{
     overflow: hidden;
     visibility: hidden;
+    color: #171717;
     width: 0px;
    height: 150px;
     margin-top: 60vh;
     margin-top:  calc(var(--vh, 1vh) * 60);
-    transition: all .5s linear;
+    animation: beerTextDissapear .7s linear;
+   
     
 }
 .nav{
     left: 0;
     display: block;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, var(--pY));
     backdrop-filter: blur(0px);
 }
 .nav__ul{
@@ -242,6 +312,7 @@ display: none;
     background-color: none;
     justify-content: space-between;
     margin:30px 60px;
+    margin-bottom: 0;
    
 }
 .navbtn{
@@ -259,6 +330,7 @@ display: none;
     .nav__ul{
         margin:30px auto;
         max-width: calc(1600px - 60px);
+        margin-bottom: 0;
     }
  }
  @media (min-width: 2000px) {
@@ -267,6 +339,15 @@ display: none;
         margin-top: 70px;
        
     }
+ }
+ @keyframes beerTextReveal {
+    0% {color: #171717; visibility: none; width: 0px;}
+     70% { color: #171717; visibility: visible; width: 350px;}
+     100% { color: #D3D3D3; visibility: visible; width: 350px; }
+ }
+ @keyframes beerTextDissapear {
+     0% { color: #171717; visibility: visible; width: 350px;}
+     70% {color: #171717; visibility: none; width: 0px; }
  }
 
 ::-webkit-scrollbar {

@@ -4,7 +4,9 @@ var selection = document.getElementById("selection");
 var beers = document.getElementsByClassName("selection__beer");
 var beerTexts =document.getElementsByClassName("selection__beer__text")
 var currentBeer = 0 ;
-var pos = 60*vh;      
+var pos = 60*vh;
+var nav = document.getElementById("nav");
+document.documentElement.style.setProperty('--pY', `${0}px`);
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 window.addEventListener('resize', () => {
@@ -14,9 +16,12 @@ window.addEventListener('resize', () => {
     changeBtnPosition();
 });
 
-document.onscroll = () => changeBtnPosition();
-function changeBtnPosition()
-{
+document.onscroll = () => {
+    changeBtnPosition();
+    setPY();
+}
+
+function changeBtnPosition(){
    
         if(window.innerWidth >= 340){
             
@@ -76,4 +81,17 @@ function select(beer){
             element.classList.remove("selection__beer__text--selected");
         }
     }
+}
+function switchMenu(){
+    nav.classList.toggle("hidden")
+}
+
+function setPY(){
+    var x = (window.pageYOffset - 420) * 0.008;
+    if(x<0)
+      {  x = 0;}
+    else if(x>1)
+       { x=1;}
+
+        document.documentElement.style.setProperty('--pY', `${x}`);
 }

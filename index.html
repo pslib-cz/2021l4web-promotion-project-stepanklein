@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ČEP | Oficiální webová stránka pivovaru Čep</title>
     <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="./icons/style.css">
     <link rel="stylesheet" href="style.css">
-    <script>
-       
-    </script>
     <script src="./index.js" defer></script>
 </head>
 <body>
@@ -25,8 +23,8 @@
 
     </header>
     <main class="main">
-        <div class="navbtn"></div>
-        <nav class="nav hidden">
+        <div onclick="switchMenu()" class="navbtn"><span class="icon-menu"></span></div>
+        <nav onclick="switchMenu()" id="nav" class="nav hidden">
             <ul class="nav__ul">
                 <li><a class="nav__ul__a" href="#selection">Máme na čepu</a></li>
                 <li><a class="nav__ul__a" href="#aboutus">O nás</a></li>
@@ -72,7 +70,13 @@
         </div>
         <div class="gallery" id="gallery">
             <h2 class="h2">Galerie</h2>
+            <div class="gallery__content">
+                <figure class="gallery__fig"><img  class="gallery__fig__img" src="http://via.placeholder.com/640x360" alt=""><figcaption  class="gallery__fig__figcap"></figcaption></figure>
+                <figure class="gallery__fig"><img  class="gallery__fig__img" src="http://via.placeholder.com/640x360" alt=""><figcaption  class="gallery__fig__figcap"></figcaption></figure>
+                <figure class="gallery__fig"><img  class="gallery__fig__img" src="http://via.placeholder.com/640x360" alt=""><figcaption  class="gallery__fig__figcap"></figcaption></figure>
+                <figure class="gallery__fig"><img  class="gallery__fig__img" src="http://via.placeholder.com/640x360" alt=""><figcaption  class="gallery__fig__figcap"></figcaption></figure>
             
+            </div>
         </div>
         <div class="contact" id="contact">
             <h2 class="h2">Kontakt</h2>
@@ -81,7 +85,12 @@
                 <a class="contact__p"  href="mailto:pivo@pivocep.cz">mail: pivo@pivocep.cz</a>
                 <p class="contact__p" >adresa: Ulice 2415/21 město 466 03 </p>
             </address>
-          </div>
+            <div class="contact__social">
+                <a class="contact__social__link" href=""><span class="icon-facebook"></span></a>
+                <a class="contact__social__link" href=""><span class="icon-instagram"></span></a>
+                <a class="contact__social__link" href=""><span class="icon-twitter"></span></a>
+            </div>
+        </div>
     </main>
 </body>
 </html>
