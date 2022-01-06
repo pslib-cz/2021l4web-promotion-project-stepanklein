@@ -7,14 +7,20 @@ html{
     color: #D3D3D3;
     font-size: 12pt;
     font-weight: 400;
+    scroll-behavior: smooth;
 }
 .h2{
     font-size: 26px;
     text-transform: uppercase;
     font-weight: 600;
     color: rgb(226, 185, 44);
-    margin-top: 35px;
+    margin-top: 0;
+    padding-top: 40px;
+
     margin-bottom: 15px;
+}
+p{
+    line-height: 1.5em ;
 }
 
 .hidden{
@@ -70,7 +76,7 @@ a{
     position: fixed;
     background-color: rgba(0, 0, 0, 0.774);
    backdrop-filter: blur(3px);
-   width: calc(100vw - 7px);
+   width: 100vw;
     left: 0;
     top: 0;
 }
@@ -165,6 +171,7 @@ display: none;
 .aboutus{
     max-width: 500px;
     text-align: justify;
+
 }
 .gallery__content{
     display: grid;
@@ -249,7 +256,7 @@ margin:15px 0;
  
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1150px) {
     .main{
         margin:0 60px;
        
