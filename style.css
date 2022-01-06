@@ -188,6 +188,7 @@ margin: 0px;
 .gallery__fig__img{
     display: block;
     width: 100%;
+    max-height: 400px;
     object-fit: cover ;
 }
 .contact__p{
@@ -221,6 +222,7 @@ left: 15px;
 display: flex;
 justify-content: space-between;
 margin:15px 0;
+
 }
 
 
