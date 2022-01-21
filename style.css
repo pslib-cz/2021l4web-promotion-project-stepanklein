@@ -28,7 +28,7 @@ p{
 }
 header{
     position: absolute;
-    width: calc(100vw - 8px);
+    width: 100%;
 
 }
 .header__content{
@@ -76,7 +76,7 @@ a{
     position: fixed;
     background-color: rgba(0, 0, 0, 0.774);
    backdrop-filter: blur(3px);
-   width: 100vw;
+   width: 100%;
     left: 0;
     top: 0;
 }
