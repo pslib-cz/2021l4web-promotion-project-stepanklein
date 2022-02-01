@@ -1,18 +1,14 @@
-var vh = window.innerHeight * 0.01;
-var btns = document.getElementsByClassName("selection__btn");
-var selection = document.getElementById("selection");
-var beers = document.getElementsByClassName("selection__beer");
-var beerTexts =document.getElementsByClassName("selection__beer__text")
-var currentBeer = 0 ;
-var pos = 60*vh;
-var nav = document.getElementById("nav");
+const beers = document.getElementsByClassName("selection__beer");
+const beerTexts =document.getElementsByClassName("selection__beer__text")
+let currentBeer = 0 ;
+
+setVh()
+var pos 
 document.documentElement.style.setProperty('--pY', `${0}px`);
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 
 window.addEventListener('resize', () => {
-     let vh = window.innerHeight * 0.01;
-     pos = 60*vh;  
-     document.documentElement.style.setProperty('--vh', `${vh}px`);
+    setVh()
     changeBtnPosition();
 });
 
@@ -21,8 +17,18 @@ document.onscroll = () => {
     setPY();
 }
 
+/*Opravuje nepřesné vh ve Chromu na telefonech */
+function setVh(){
+    let vh = window.innerHeight * 0.01;
+    pos = 60*vh;  
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+/* Změna chování šipek "selection__btn" v závislosti na window.pageYOffset (pouze na mobilu) */
 function changeBtnPosition(){
-   
+    const btns = document.getElementsByClassName("selection__btn");
+    const selection = document.getElementById("selection");
+
         if(window.innerWidth >= 340){
             
             if ((selection.offsetHeight - 150 - pos) < window.pageYOffset) {
@@ -51,26 +57,30 @@ function changeBtnPosition(){
         }
 
 }
+
+/* Změna aktuálně zobrazeného piva (pouze na mobilu) */
 function next(change){
     currentBeer = currentBeer + change;
 
-if(currentBeer > beers.length-1){
-    currentBeer = 0;
-}
-else if(currentBeer < 0){
-currentBeer = beers.length-1;
-}
-console.log(currentBeer)
-for (let i = 0; i < beers.length; i++) {
-    const element = beers[i];
-    if(i==currentBeer){
-        element.classList.remove("selection__beer--hidden");
+    if(currentBeer > beers.length-1){
+        currentBeer = 0;
     }
-    else{
-        element.classList.add("selection__beer--hidden");
+    else if(currentBeer < 0){
+        currentBeer = beers.length-1;
+    }
+    console.log(currentBeer)
+    for (let i = 0; i < beers.length; i++) {
+        const element = beers[i];
+        if(i==currentBeer){
+            element.classList.remove("selection__beer--hidden");
+        }
+        else{
+            element.classList.add("selection__beer--hidden");
+        }
     }
 }
-}
+
+/* Změna aktuálně zobrazeného textu k pivu (pouze na desktopu) */
 function select(beer){
     for (let i = 0; i < beerTexts.length; i++) {
         const element = beerTexts[i];
@@ -82,16 +92,23 @@ function select(beer){
         }
     }
 }
+
+/* toggle hamburgr menu (pouze na mobilu) */
 function switchMenu(){
+    const nav = document.getElementById("nav");
     nav.classList.toggle("hidden")
 }
 
+/* vytváří css custom property "--pY" */
 function setPY(){
-    var x = (window.pageYOffset - 420) * 0.008;
+    let x = (window.pageYOffset - 420) * 0.008;
     if(x<0)
-      {  x = 0;}
+    { 
+        x = 0;
+    }
     else if(x>1)
-       { x=1;}
-
-        document.documentElement.style.setProperty('--pY', `${x}`);
+    {
+        x=1;
+    }
+    document.documentElement.style.setProperty('--pY', `${x}`);
 }
